@@ -65,7 +65,7 @@ const register = async(req,res) => {
 
     const deleteStudentList = async(req, res)=>{
         try{
-            const email = +req.params.email;
+            const email = req.params.email;
             await studentRepository.deleteStudentList({email:email});
             res.status(204).send("one record deleted");
         }catch(e){
